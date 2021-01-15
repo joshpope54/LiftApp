@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:id="@+id/search_icon"
+        android:visible="true"
+        android:title="@string/search_exercises"
+        android:icon="@drawable/ic_baseline_search_24"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView">
+    </item>
+
+    <item android:id="@+id/fitler_icon"
+        android:visible="true"
+        android:title="@string/filter_exercises"
+        android:icon="@drawable/ic_baseline_filter_alt_24"
+        app:showAsAction="always">
+    </item>
+
+    <item android:id="@+id/add_icon"
+        android:visible="true"
+        android:title="@string/add_exercise"
+        android:icon="@drawable/ic_baseline_add_box_24"
+        app:showAsAction="always">
+    </item>
+</menu>

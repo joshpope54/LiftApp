@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout  android:id="@+id/collapsed_layout" android:layout_width="match_parent" android:layout_height="64dp">
+        <View android:background="@drawable/rounded_rect_clickable" android:clickable="false" android:layout_width="24dp" android:layout_height="4dp" android:layout_marginTop="6dp" android:layout_centerHorizontal="true"/>
+        <TextView android:text="Evening Workout" android:textStyle="bold" android:ellipsize="end" android:id="@+id/collapsed_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:maxLines="1" android:layout_centerHorizontal="true" android:layout_marginStart="48dp" android:layout_marginEnd="48dp" style="?attr/textAppearanceHeadline6"/>
+        <TextView android:text="00:00:00" android:id="@+id/collapsed_subtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@+id/collapsed_title" android:layout_centerHorizontal="true" style="?attr/textAppearanceCaption"/>
+    </RelativeLayout>
+<!--    <com.google.android.material.appbar.AppBarLayout android:id="@+id/log_workout_actionbar" android:background="?attr/colorSurface" android:visibility="invisible" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" android:nestedScrollingEnabled="true" android:elevation="8dp" android:stateListAnimator="@null" app:liftOnScroll="true">-->
+<!--        <FrameLayout android:id="@+id/action_buttons__log_workout" android:layout_width="match_parent" android:layout_height="match_parent">-->
+<!--            <TextView android:layout_gravity="center_vertical" android:id="@+id/rest_timer_title" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="72dp" style="?attr/textAppearanceBody1"/>-->
+<!--            <com.google.android.material.button.MaterialButton android:layout_gravity="right|center_vertical|center_horizontal|center|end" android:id="@+id/action_bar__finish" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/Widget.MaterialComponents.Button.TextButton"/>-->
+<!--            <FrameLayout android:id="@+id/contextual_toolbar" android:background="?android:attr/colorBackground" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">-->
+<!--                <TextView android:layout_gravity="center_vertical" android:id="@+id/contextual_toolbar_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="72dp" style="@style/TextAppearance.MaterialComponents.Headline6"/>-->
+<!--            </FrameLayout>-->
+<!--        </FrameLayout>-->
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
+</merge>
