@@ -14,7 +14,7 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import dev.joshpope.lift.ui.exercises.ExercisesFragment;
-import dev.joshpope.lift.ui.history.HistoryFragment;
+import dev.joshpope.lift.ui.activity.ActivityFragment;
 import dev.joshpope.lift.ui.workout.WorkoutFragment;
 import dev.joshpope.lift.ui.workout.active.ActiveFragment;
 
@@ -32,33 +32,29 @@ public class MainActivity extends AppCompatActivity {
         switchToFragmentHistory();
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener(){
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_history:
-                    switchToFragmentHistory();
-                    return true;
-                case R.id.navigation_workout:
-                    if(workoutActive) {
-                        switchToFragmentActive();
-                    }else{
-                        switchToFragmentWorkout();
-                    }
-                    return true;
-                case R.id.navigation_exercises:
-                    switchToFragmentExercises();
-                    return true;
+    private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = item -> {
+        if(item.getItemId() == R.id.navigation_history){
+            switchToFragmentHistory();
+            return true;
+        }else if(item.getItemId() == R.id.navigation_workout){
+            if(workoutActive){
+                switchToFragmentActive();
+            }else{
+                switchToFragmentWorkout();
             }
+            return true;
+        }else if(item.getItemId() == R.id.navigation_exercises){
+            switchToFragmentExercises();
+            return true;
+        }else{
             return false;
         }
-
     };
 
     public void switchToFragmentHistory() {
-        getSupportActionBar().setTitle("History");
+        getSupportActionBar().setTitle("Activity");
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.nav_host_fragment, new HistoryFragment()).commit();
+        manager.beginTransaction().replace(R.id.nav_host_fragment, new ActivityFragment()).commit();
     }
     public void switchToFragmentWorkout() {
         getSupportActionBar().setTitle("Workout - Inactive");
@@ -71,6 +67,12 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Workout - Active");
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(R.id.nav_host_fragment, new ActiveFragment()).commit();
+    }
+
+    public void cancelWorkout(){
+        workoutActive=false;
+        switchToFragmentWorkout();
+        //TODO: Cancel Timer.
     }
 
     public void switchToFragmentExercises() {

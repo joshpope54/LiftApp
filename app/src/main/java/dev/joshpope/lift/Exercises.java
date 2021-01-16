@@ -1,26 +1,28 @@
 package dev.joshpope.lift;
 
 import android.os.Bundle;
-import android.view.MenuItem;
 
-import androidx.appcompat.app.ActionBar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.preference.PreferenceFragmentCompat;
 
-public class SettingsActivity extends AppCompatActivity {
+import android.view.MenuItem;
+import android.view.View;
+
+import dev.joshpope.lift.R;
+
+public class Exercises extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.settings_activity);
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar2);
-        setSupportActionBar(myToolbar);
-        getSupportActionBar().setTitle("Settings");
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+        setContentView(R.layout.activity_exercises);
+        Toolbar toolbar = findViewById(R.id.toolbar4);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Add Exercise");
     }
 
     @Override
@@ -40,5 +42,4 @@ public class SettingsActivity extends AppCompatActivity {
         finish();
         return true;
     }
-
 }

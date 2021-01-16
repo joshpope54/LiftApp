@@ -14,6 +14,8 @@ import dev.joshpope.lift.R;
 
 public class WorkoutFragment extends Fragment {
 
+    public WorkoutFragment() {
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {

@@ -10,23 +10,28 @@
         android:theme="@style/Theme.Lift"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Exercises"
+            android:label="@string/title_activity_exercises"
+            android:theme="@style/Theme.Lift.NoActionBar"></activity>
+        <activity
             android:name=".Profile"
-            android:label="@string/title_activity_profile"></activity>
-
+            android:label="@string/title_activity_profile" />
         <activity
             android:name=".ui.login.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".register.RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".SettingsActivity" />
     </application>
+
     <uses-permission android:name="android.permission.INTERNET" />
+
 </manifest>

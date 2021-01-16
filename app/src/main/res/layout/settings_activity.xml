@@ -14,8 +14,4 @@
             android:layout_height="?attr/actionBarSize"
             />
     </com.google.android.material.appbar.AppBarLayout>
-    <FrameLayout
-        android:id="@+id/settings"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 </LinearLayout>

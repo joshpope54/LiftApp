@@ -4,9 +4,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 
+import dev.joshpope.lift.MainActivity;
 import dev.joshpope.lift.R;
 
 public class ActiveFragment extends Fragment {
@@ -54,6 +56,15 @@ public class ActiveFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_active, container, false);
+        View root = inflater.inflate(R.layout.fragment_active, container, false);
+        Button button = root.findViewById(R.id.cancel_workout);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).cancelWorkout();
+            }
+        });
+
+        return root;
     }
 }
